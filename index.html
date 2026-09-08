@@ -1,0 +1,924 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Surprise ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         WELCOME PAGE
+    ========================= -->
+    <main class="welcome">
+
+        <div class="content">
+
+            <p class="small-text">
+                Hey you...
+            </p>
+
+            <h1>
+                I made something<br>
+                <span>special for you ❤️</span>
+            </h1>
+
+            <p class="subtitle">
+                But first, I need to know if this surprise is really for you...
+            </p>
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter the secret..."
+                >
+
+                <button onclick="checkPassword()">
+                    Unlock ❤️
+                </button>
+
+            </div>
+
+            <p id="message"></p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         WISH PAGE
+    ========================= -->
+    <section class="wish-page" id="wishPage">
+
+        <div class="wish-content">
+
+            <p class="wish-small">
+                You found it... ❤️
+            </p>
+
+            <h2>
+                Happy Birthday,
+                <span>Beautiful</span>
+            </h2>
+
+            <p
+                class="typing-text"
+                id="typingText"
+            ></p>
+
+            <button
+                class="next-btn"
+                onclick="openMemories()"
+            >
+                There's more for you ✨
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CINEMATIC MEMORIES PAGE
+    ========================= -->
+    <section
+        class="memories-page"
+        id="memoriesPage"
+    >
+
+        <!-- INTRO GIRL -->
+        <div
+            class="memory-intro"
+            id="memoryIntro"
+        >
+
+            <div
+                class="girl-wrapper"
+                onclick="girlClicked()"
+            >
+
+                <!-- Illustrated Girl -->
+                <svg
+                    class="illustrated-girl"
+                    viewBox="0 0 260 430"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <!-- Glow -->
+                    <ellipse
+                        cx="130"
+                        cy="415"
+                        rx="90"
+                        ry="12"
+                        fill="rgba(255,105,180,0.25)"
+                    />
+
+                    <!-- Hair Back -->
+                    <path
+                        d="M57 145
+                           C40 85 67 25 132 25
+                           C201 25 226 91 205 164
+                           L211 315
+                           C185 352 78 350 52 310
+                           Z"
+                        fill="#28182d"
+                    />
+
+                    <!-- Body/Dress -->
+                    <path
+                        d="M82 250
+                           C57 273 45 330 38 405
+                           L222 405
+                           C215 330 202 273 178 250
+                           Z"
+                        fill="#168b91"
+                    />
+
+                    <!-- Dress Pattern -->
+                    <g
+                        fill="#f7d9e9"
+                        opacity="0.85"
+                    >
+                        <circle cx="75" cy="300" r="4"/>
+                        <circle cx="105" cy="330" r="4"/>
+                        <circle cx="145" cy="290" r="4"/>
+                        <circle cx="180" cy="325" r="4"/>
+                        <circle cx="90" cy="375" r="4"/>
+                        <circle cx="155" cy="365" r="4"/>
+                    </g>
+
+                    <!-- Neck -->
+                    <path
+                        d="M111 218 L111 255
+                           Q130 270 149 255
+                           L149 218"
+                        fill="#b87966"
+                    />
+
+                    <!-- Face -->
+                    <ellipse
+                        cx="130"
+                        cy="155"
+                        rx="61"
+                        ry="78"
+                        fill="#c98d78"
+                    />
+
+                    <!-- Hair Front -->
+                    <path
+                        d="M70 155
+                           C54 85 88 43 139 45
+                           C190 48 205 96 189 151
+                           C180 125 163 104 145 98
+                           C122 89 96 102 82 126
+                           Z"
+                        fill="#28182d"
+                    />
+
+                    <!-- Hair Side -->
+                    <path
+                        d="M73 126
+                           C42 168 54 270 95 301
+                           C72 253 82 190 73 126Z"
+                        fill="#28182d"
+                    />
+
+                    <path
+                        d="M188 124
+                           C218 170 205 263 166 302
+                           C190 246 181 182 188 124Z"
+                        fill="#28182d"
+                    />
+
+                    <!-- Eyes -->
+                    <ellipse
+                        cx="108"
+                        cy="157"
+                        rx="7"
+                        ry="9"
+                        fill="#241624"
+                    />
+
+                    <ellipse
+                        cx="153"
+                        cy="157"
+                        rx="7"
+                        ry="9"
+                        fill="#241624"
+                    />
+
+                    <!-- Eye Shine -->
+                    <circle
+                        cx="110"
+                        cy="154"
+                        r="2"
+                        fill="white"
+                    />
+
+                    <circle
+                        cx="155"
+                        cy="154"
+                        r="2"
+                        fill="white"
+                    />
+
+                    <!-- Nose -->
+                    <path
+                        d="M130 160 Q125 178 132 181"
+                        fill="none"
+                        stroke="#965e59"
+                        stroke-width="2"
+                    />
+
+                    <!-- Smile -->
+                    <path
+                        d="M116 192 Q130 203 145 191"
+                        fill="none"
+                        stroke="#7e4050"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                    />
+
+                    <!-- Hair Highlight -->
+                    <path
+                        d="M90 75 Q120 42 160 63"
+                        fill="none"
+                        stroke="#71456f"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+
+                    <!-- Arm -->
+                    <path
+                        d="M78 275 Q54 325 64 395"
+                        fill="none"
+                        stroke="#c98d78"
+                        stroke-width="25"
+                        stroke-linecap="round"
+                    />
+
+                    <path
+                        d="M181 275 Q206 325 195 395"
+                        fill="none"
+                        stroke="#c98d78"
+                        stroke-width="25"
+                        stroke-linecap="round"
+                    />
+
+                </svg>
+
+                <div class="girl-glow"></div>
+
+            </div>
+
+
+            <div class="girl-text">
+
+                <p>
+                    Someone has something
+                    <br>
+                    special for you...
+                </p>
+
+                <span class="heart-float">
+                    ♥
+                </span>
+
+                <button
+                    class="girl-click"
+                    onclick="girlClicked()"
+                >
+                    Click on her ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY BOX -->
+        <div
+            class="memory-box-scene"
+            id="memoryBoxScene"
+        >
+
+            <div class="box-message">
+
+                <p>
+                    I think you should
+                    <br>
+                    open this...
+                </p>
+
+            </div>
+
+
+            <div
+                class="memory-box"
+                id="memoryBox"
+                onclick="openMemoryBox()"
+            >
+
+                <div class="box-lid">
+
+                    <div class="box-ribbon-horizontal"></div>
+
+                    <div class="box-ribbon-vertical"></div>
+
+                    <div class="box-bow">
+                        🎀
+                    </div>
+
+                </div>
+
+
+                <div class="box-body">
+
+                    <div class="box-ribbon-body"></div>
+
+                </div>
+
+            </div>
+
+
+            <p class="box-hint">
+                Click the box ✨
+            </p>
+
+        </div>
+
+
+        <!-- PHOTO EXPLOSION AREA -->
+        <div
+            class="photo-explosion"
+            id="photoExplosion"
+        >
+            <!-- Photos generated by JavaScript -->
+        </div>
+
+
+        <!-- PHOTO VIEWER -->
+        <div
+            class="memory-viewer"
+            id="memoryViewer"
+        >
+
+            <div class="viewer-background"></div>
+
+            <button
+                class="viewer-close"
+                onclick="closeMemoryViewer()"
+            >
+                ×
+            </button>
+
+
+            <div class="viewer-card">
+
+                <div class="viewer-photo-wrap">
+
+                    <img
+                        id="viewerPhoto"
+                        src=""
+                        alt="Memory"
+                    >
+
+                </div>
+
+
+                <p
+                    class="viewer-caption"
+                    id="viewerCaption"
+                ></p>
+
+            </div>
+
+
+            <div
+                class="viewer-counter"
+                id="viewerCounter"
+            >
+                01 / 10
+            </div>
+
+        </div>
+
+
+        <!-- FINAL MEMORIES -->
+        <div
+            class="memories-finished"
+            id="memoriesFinished"
+        >
+
+            <div
+                class="finished-photos"
+                id="finishedPhotos"
+            ></div>
+
+            <p>
+                Some moments are meant to be remembered forever... ❤️
+            </p>
+
+            <h2></h2>
+
+            <button
+                class="more-surprise-btn"
+                onclick="openCake()"
+            >
+                There's more...
+                <br>
+                <span>Just check it out ✨</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAKE PAGE
+    ========================= -->
+    <section
+        class="cake-page"
+        id="cakePage"
+    >
+
+        <div class="cake-content">
+
+            <p class="cake-small">
+                Make a wish... ✨
+            </p>
+
+            <h2 id="cakeHeading">
+                It's time to
+                <span>celebrate</span>
+                🎂
+            </h2>
+
+
+            <!-- CAKE SCENE -->
+            <div
+                class="cake-scene"
+                id="cakeScene"
+            >
+
+                <!-- CANDLES -->
+                <div class="candles">
+
+                    <div
+                        class="candle"
+                        onclick="blowCandle(this)"
+                    >
+                        <div class="flame"></div>
+                    </div>
+
+                    <div
+                        class="candle"
+                        onclick="blowCandle(this)"
+                    >
+                        <div class="flame"></div>
+                    </div>
+
+                    <div
+                        class="candle"
+                        onclick="blowCandle(this)"
+                    >
+                        <div class="flame"></div>
+                    </div>
+
+                    <div
+                        class="candle"
+                        onclick="blowCandle(this)"
+                    >
+                        <div class="flame"></div>
+                    </div>
+
+                    <div
+                        class="candle"
+                        onclick="blowCandle(this)"
+                    >
+                        <div class="flame"></div>
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE -->
+                <div class="cake">
+
+                    <div class="cake-top"></div>
+
+                    <div class="cake-middle"></div>
+
+                    <div class="cake-bottom"></div>
+
+                </div>
+
+
+                <!-- CAKE GLOW -->
+                <div class="cake-glow"></div>
+
+            </div>
+
+
+            <!-- WISH INSTRUCTION -->
+            <p
+                class="wish-instruction"
+                id="wishInstruction"
+            >
+                Click the candles to make a wish 🕯️
+            </p>
+
+
+            <!-- AFTER CANDLES -->
+            <div
+                class="cake-surprise"
+                id="cakeSurprise"
+            >
+
+                <div class="cake-sparkles">
+                    ✨ ✨ ✨
+                </div>
+
+                <h3>
+                    Make your wish... ❤️
+                </h3>
+
+                <p>
+                    May all your little wishes come true.
+                </p>
+
+            </div>
+
+
+            <!-- NEXT BUTTON -->
+            <button
+                class="cake-next-btn"
+                id="cakeNextBtn"
+                onclick="finishCake()"
+            >
+                I made my wish ❤️
+            </button>
+
+        </div>
+
+
+        <!-- CONFETTI -->
+        <div
+            class="confetti-container"
+            id="confettiContainer"
+        ></div>
+
+
+        <!-- BALLOONS -->
+        <div
+            class="balloons-container"
+            id="balloonsContainer"
+        ></div>
+
+    </section>
+
+
+    <!-- =========================
+         GIFT BOX PAGE
+    ========================= -->
+    <section
+        class="gift-page"
+        id="giftPage"
+    >
+
+        <div class="gift-content">
+
+            <p class="gift-small">
+                One more little surprise... ✨
+            </p>
+
+            <h2>
+                I got something
+                <span>for you ❤️</span>
+            </h2>
+
+
+            <div
+                class="gift-box-scene"
+                id="giftBoxScene"
+                onclick="openGift()"
+            >
+
+                <div class="gift-glow"></div>
+
+
+                <div class="gift-box">
+
+                    <div class="gift-lid">
+
+                        <div class="gift-ribbon-horizontal"></div>
+
+                    </div>
+
+
+                    <div class="gift-body">
+
+                        <div class="gift-ribbon-vertical"></div>
+
+                    </div>
+
+
+                    <div class="gift-bow">
+                        🎀
+                    </div>
+
+                </div>
+
+
+                <p class="gift-hint">
+                    Click the gift 🎁
+                </p>
+
+            </div>
+
+
+            <div
+                class="gift-surprise"
+                id="giftSurprise"
+            >
+
+                <div class="gift-sparkles">
+                    ✨ 💖 ✨
+                </div>
+
+                <h3>
+                    You are my favorite gift ❤️
+                </h3>
+
+                <p>
+                    But there's something else I want you to see...
+                </p>
+
+                <button
+                    class="letter-btn"
+                    onclick="openLetter(event)"
+                >
+                    Open this 💌
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LETTER PAGE
+    ========================= -->
+    <section
+        class="letter-page"
+        id="letterPage"
+    >
+
+        <div class="letter-content">
+
+            <p class="letter-small">
+                A little something from my heart... ❤️
+            </p>
+
+            <h2>
+                For
+                <span>you</span>
+                💌
+            </h2>
+
+
+            <!-- ENVELOPE -->
+            <div
+                class="envelope-scene"
+                id="envelopeScene"
+                onclick="openEnvelope()"
+            >
+
+                <div class="envelope-glow"></div>
+
+
+                <div class="envelope">
+
+                    <div class="envelope-back"></div>
+
+
+                    <div class="letter-paper">
+
+                        <div class="letter-paper-content">
+
+                            <h3>
+                                Happy Birthday ❤️
+                            </h3>
+
+                            <p>
+                                To the most special person in my life...
+                            </p>
+
+                            <p>
+                                Every little moment with you
+                                has become a memory I want to
+                                keep forever.
+                            </p>
+
+                            <p>
+                                I hope this birthday brings you
+                                all the happiness, smiles and love
+                                you deserve.
+                            </p>
+
+                            <p>
+                                And no matter how many birthdays
+                                come and go, I hope I get to
+                                celebrate many more of them
+                                with you. ❤️
+                            </p>
+
+                            <p class="letter-ending">
+                                Always yours,
+                                <br>
+                                ❤️
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap"></div>
+
+                    <div class="envelope-heart">
+                        ❤️
+                    </div>
+
+                </div>
+
+
+                <p class="envelope-hint">
+                    Click the envelope 💌
+                </p>
+
+            </div>
+
+
+            <!-- AFTER OPENING -->
+            <div
+                class="letter-finished"
+                id="letterFinished"
+            >
+
+                <div class="letter-sparkles">
+                    ✨ ❤️ ✨
+                </div>
+
+                <p>
+                    Some feelings are better written
+                    than spoken.
+                </p>
+
+                <button
+                    class="ending-btn"
+                    onclick="openFinalEnding()"
+                >
+                    One last thing... ✨
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL CINEMATIC ENDING
+    ========================= -->
+    <section
+        class="final-page"
+        id="finalPage"
+    >
+
+        <div
+            class="final-stars"
+            id="finalStars"
+        ></div>
+
+
+        <div class="final-content">
+
+            <p class="final-small">
+                And finally... ❤️
+            </p>
+
+            <h2>
+                Happy Birthday,
+                <span>My Love</span>
+                🎂
+            </h2>
+
+
+            <div class="final-divider">
+                ✦
+            </div>
+
+
+            <p class="final-message">
+
+                I hope this little surprise made you smile.
+
+                <br>
+                <br>
+
+                Because seeing you happy
+                will always be one of my favorite things. ❤️
+
+            </p>
+
+
+            <p class="final-last">
+
+                Here's to you,
+
+                <br>
+
+                to us,
+
+                <br>
+
+                and to all the beautiful memories
+                still waiting to be made. ✨
+
+            </p>
+
+
+            <button
+                class="replay-btn"
+                onclick="replaySurprise()"
+            >
+                Replay our story ↻
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SECTION MUSIC
+    ========================= -->
+
+    <audio
+        id="memoriesMusic"
+        preload="auto"
+        loop
+    >
+        <source
+            src="assets/music/memories.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <audio
+        id="cakeMusic"
+        preload="auto"
+        loop
+    >
+        <source
+            src="assets/music/cake.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+    
+
+</body>
+
+</html>
+
+<audio id="memoriesMusic" preload="auto" loop>
+    <source src="assets/music/memories.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="cakeMusic" preload="auto" loop>
+    <source src="assets/music/cake.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
